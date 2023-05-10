@@ -1,0 +1,29 @@
+.product-description {
+
+    h1 {
+        font-size: 26px;
+        color: $color-dark-0;
+        margin-bottom: 20px;
+    }
+
+    .description-card {
+        display: flex;
+        justify-content: center;
+        gap: 70px;
+
+
+        .p-info {
+            p {
+                margin-bottom: 25px;
+                line-height: 27px;
+                color: azure;
+            }
+        }
+
+        img {
+            align-self: start;
+        }
+
+
+    }
+}

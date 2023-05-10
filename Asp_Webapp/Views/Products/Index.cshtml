@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Products";
+}
+
+@model ProductInfoViewModel
+
+
+@{
+    var products = await productService.GetAllAsync();
+    var pro = products.Take(1);
+
+}
+
+<section class="container">
+    <div>
+        <div>
+            @if (products != null)
+            {
+                foreach (var product in products)
+                {
+                    <a asp-controller="products" asp-action="ProductDetailes" asp-route-id="@product.ArticleNumber" class="collection-item">
+                        <img src="@product.ImageUrl" alt="@product.Name" class="sharmuta">
+                        <div class="body">
+                            <div class="title">@product.Name</div>
+                            <div class="info">
+                                <div class="price">
+                                    <i class="new-price">@product.Price</i>
+                                    <i class="old-price">@product.PriceDiscount</i>
+                                </div>
+                                <div>
+                                    Categories:
+                                    @foreach (var category in product.ProductCategories)
+                                    {
+
+                                        <ul>
+                                            <li>@category.Category.CategoryName</li>
+                                        </ul>
+
+                                    }
+                                </div>
+                                <i class="add-cart fa-regular fa-cart-plus"></i>
+                            </div>
+                        </div>
+                    </a>
+                }
+            }
+        </div>
+    </div>
+</section>

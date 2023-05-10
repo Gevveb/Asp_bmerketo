@@ -1,0 +1,63 @@
+﻿@model CreateNewProductVeiwModel
+
+
+<section class="create-product mt-5">
+    <div class="container">
+        <h1 class="create-product-title">CREATE NEW PRODUCT</h1>
+
+        <form novalidate method="post" class="product-form">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="product-image">
+                <label asp-for="ImageUrl">Product image*</label>
+                <input asp-for="ImageUrl" type="text">
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+
+            <div class="product-title">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" type="text">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="product-description">
+                <label asp-for="Description">Product description</label>
+                <textarea asp-for="Description" type="text" class="resize"></textarea>
+            </div>
+
+            <div class="product-price">
+                <label asp-for="Price">Price*</label>
+                <input asp-for="Price" type="text">
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <div class="product-new-price">
+                <label asp-for="PriceDiscount">Discounted Price</label>
+                <input asp-for="PriceDiscount" type="text">
+            </div>
+
+            <div class="product-title">
+                @foreach (SelectListItem category in ViewBag.Categories)
+                {
+                    <div class="mb-2">
+                        <input id="category-@category.Text-@category.Value" type="checkbox" name="Categories" value="@category.Value" checked="@category.Selected" class="form-check-input" />
+                        <label for="category-@category.Text-@category.Value" class="small form-check-label">@category.Text</label>
+                    </div>
+                }
+            </div>
+
+            <button class="btn-theme">CREATE</button>
+        </form>
+    </div>
+</section>
+
+
+@*                <select asp-for="Form.Category">
+                    @foreach (var category in await productCategoryManager.GetCategoriesAsync())
+                    {
+                        <option value="@category.Value">
+                            @category.Name
+                        </option>
+                    }
+                </select>*@

@@ -1,0 +1,52 @@
+﻿@model ContactFormViewModel
+
+
+<section class="contact-form">
+    <div class="container">
+        <div class="title">Write something</div>
+
+        @if (@TempData["AlertMessage"] != null)
+        {
+            <div class="alert alert-success text-center">
+                @TempData["AlertMessage"]
+            </div>
+        }
+
+        <form method="post" novalidate>
+            <div class="name form-group">
+                <label asp-for="Name" for="name"></label>
+                <input asp-for="Name" onchange="validate(event)" id="name" type="text" required>
+                <span asp-validation-for="Name"></span>
+                <div id="nameErrorMessage" class="errorMessage"></div>
+            </div>
+            <div class="email form-group">
+                <label asp-for="Email" for="email"></label>
+                <input asp-for="Email" onchange="validate(event)" id="email" type="email">
+                <span asp-validation-for="Email"></span>
+                <div id="emailErrorMessage" class="errorMessage"></div>
+            </div>
+            <div class="phoneNumber form-group">
+                <label asp-for="PhoneNumber" for="phone"></label>
+                <input asp-for="PhoneNumber" id="phone" type="text">
+            </div>
+            <div class="companyName form-group">
+                <label asp-for="CompanyName" for="company"></label>
+                <input asp-for="CompanyName" id="company" type="text">
+            </div>
+            <div class="message form-group">
+                <label asp-for="Message" for="message"></label>
+                <textarea asp-for="Message" onchange="validate(event)" type="textarea" id="comment"></textarea>
+                <span asp-validation-for="Message" ></span>
+                <div id="commentErrorMessage" class="errorMessage"></div>
+            </div>
+            <div class="terms form-checkbox-group">
+                <label asp-for="Checkbox" class="custom-checkbox">
+                    Save my name, email in the this browser for the next time I comment.
+                    <input asp-for="Checkbox" type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button class="btn-theme">Submit</button>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,53 @@
+﻿@model ProductEntity
+
+<section class="productdetail-card">
+    <div class="container">
+        <div class="productdetails-flex">
+            <div class="product-image">
+                <div class="big-image">
+                    <img src=@Model.ImageUrl alt="">
+                </div>
+                <div class="small-images">
+                    <img src="/images/placeholders/120x113.svg" alt="">
+                    <img src="/images/placeholders/120x113.svg" alt="">
+                    <img src="/images/placeholders/120x113.svg" alt="">
+                    <img src="/images/placeholders/120x113.svg" alt="">
+                </div>
+            </div>
+            <div class="product-info">
+                <div class="product-name">@Model.Name</div>
+                <p class="product-description">@Model.Description</p>
+                <div class="product-rating">
+                    <i class="rating fa-solid fa-star rating"></i>
+                    <i class="rating fa-solid fa-star rating"></i>
+                    <i class="rating fa-solid fa-star rating"></i>
+                    <i class="rating fa-solid fa-star rating"></i>
+                    <i class="rating fa-solid fa-star rating"></i>
+                    <span>16 Reviews</span>
+                </div>
+                <div class="product-price">@Model.Price</div>
+                <div class="addto-cart">
+                    <div class="qty-counter">
+                        <button class="btn-counter-white">-</button>
+                        <span class="counter">2</span>
+                        <button class="btn-counter-white">+</button>
+                    </div>
+                    <button class="btn-theme">Add to Cart<i class="fa-regular fa-cart-plus"></i></button>
+                </div>
+@*                <div class="product-category">
+                    <div class="title">Category:</div>
+
+                    @if (tags != null)
+                    {
+                        foreach (var tag in tags)
+                        {
+                            <a class="category-link" href="#">@tag.Text,</a>
+                        }
+                    }
+
+
+                </div>*@
+            </div>
+        </div>
+    </div>
+</section>
