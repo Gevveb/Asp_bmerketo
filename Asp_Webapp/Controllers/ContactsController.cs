@@ -29,8 +29,12 @@ namespace Asp_Webapp.Controllers
                 var result = await _contactFormService.CreateAsync(contactForm);
                 if (result)
                 {
-                    TempData["AlertMessage"] = "Success! We have got your message and will come back to you as fast as possible.";
+                    TempData["Message"] = "Thank you for reaching to us! We will come back with an answer for you soon.";
                     return RedirectToAction("Index");
+                }
+                else
+                {
+                    TempData["Message"] = "Something went wrong.";
                 }
 
                 ModelState.AddModelError("", "Something went wrong");

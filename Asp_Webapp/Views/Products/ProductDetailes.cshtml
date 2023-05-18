@@ -1,6 +1,124 @@
 ﻿@model ProductEntity
 
-<section class="productdetail-card">
+
+<section class="breadcrumb">
+    <div class="container">
+        <div class="content">
+            <h1>SHOP</h1>
+            <ul>
+                <li>HOME.</li>
+                <li>PRODUCT DETAILS</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section class="product-detail container">
+
+    <div class="product-images">
+        <img id="img-box-1" src="~/@Model.ImageUrl" alt="">
+        <img id="img-box-2" src="~/images/placeholders/120x113.svg" alt="">
+        <img id="img-box-3" src="~/images/placeholders/120x113.svg" alt="">
+        <img id="img-box-4" src="~/images/placeholders/120x113.svg" alt="">
+        <img id="img-box-5" src="~/images/placeholders/120x113.svg" alt="">
+
+    </div>
+
+    <div class="product-information">
+        <h1>@Model.Name</h1>
+        <p>
+            @Model.Description
+        </p>
+        <hr>
+        @if (@Model.PriceDiscount != null!)
+        {
+            <div class="price old-price">$@Model.Price</div>
+            <div class="price">$@Model.PriceDiscount</div>
+        }
+        else
+        {
+            <div class="price">$@Model.Price</div>
+        }
+        <div class="Reviews">
+            <i class="fa-solid fa-star theam-star"></i>
+            <i class="fa-solid fa-star theam-star"></i>
+            <i class="fa-solid fa-star theam-star"></i>
+            <i class="fa-solid fa-star theam-star"></i>
+            <i class="fa-solid fa-star theam-star"></i>
+            <span> 16 Reviews</span>
+        </div>
+        <div class="btn-grid">
+            <div class="quantety-btn">
+                <button>-</button>
+                <p>1</p>
+                <button>+</button>
+            </div>
+            <button class="btn-theme">Add to Cart <i class="tocart fa-regular fa-cart-plus"></i></button>
+        </div>
+        <div class="stock">
+            <div>
+                <i class="fa-solid fa-circle" style="color: #fa3150;"></i>
+                <i class="fa-solid fa-circle" style="color: #f9c936;"></i>
+                <i class="fa-solid fa-circle" style="color: #92b8b9;"></i>
+            </div>
+            <span>SKU: N/A</span>
+        </div>
+        <button>Add to wishlist</button>
+        <div class="category">
+            Category: 
+            @foreach(var category in Model.ProductCategories)
+            {
+                <div>@category.Category.CategoryName</div>
+            }
+        </div>
+    </div>
+
+</section>
+
+<section class="additionalinfo">
+    <div class="container">
+        <button class="btn-white-them">DESCRIPTION</button>
+        <button class="btn-white-them">ADDITIONAL INFO</button>
+        <button class="btn-white-them">REVIEWS (0)</button>
+        <button class="btn-white-them">SHIPPING & DELIVERY</button>
+
+    </div>
+</section>
+
+<section class="product-description container">
+    <h1>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie. </h1>
+    <div class="description-card">
+        <div class="p-info">
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem
+                ipsum dolor.
+            </p>
+            <p>
+                accusantium laborum pretium hic excepturi harum repellat facilisis convallis potenti, adipiscing
+                lectus aliqua. Asperiores repudiandae ipsam error erat, accusamus, cum taciti unde?
+            </p>
+            <p>
+                Praesentium, pariatur, tempora consequuntur purus sapiente, iaculis vitae consequatur, rhoncus earum
+                eleifend, hendrerit ipsum rhoncus ex error, impedit! Alias laboris sequi curae aptent? Eu sagittis
+                eu, distinctio tortor? Dapibus delectus! Consequuntur luctus.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et cusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata santus est Lorem ipsum dolor sit amet. Lorem
+                ipsum dolor.
+            </p>
+        </div>
+        <img src="~/images/placeholders/469x356.svg" alt="">
+    </div>
+</section>
+
+<hr class="container">
+
+@*<section class="productdetail-card">
     <div class="container">
         <div class="productdetails-flex">
             <div class="product-image">
@@ -34,7 +152,7 @@
                     </div>
                     <button class="btn-theme">Add to Cart<i class="fa-regular fa-cart-plus"></i></button>
                 </div>
-@*                <div class="product-category">
+                <div class="product-category">
                     <div class="title">Category:</div>
 
                     @if (tags != null)
@@ -46,8 +164,8 @@
                     }
 
 
-                </div>*@
+                </div>
             </div>
         </div>
     </div>
-</section>
+</section>*@

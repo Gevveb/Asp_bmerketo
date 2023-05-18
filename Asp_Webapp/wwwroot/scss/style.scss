@@ -18,6 +18,12 @@
 @import './components/topselling';
 @import './components/newsletter';
 @import './components/contactform';
+@import './components/_utilities.scss';
 @import './components/_registerForm.scss';
-
+@import '../scss/components/_productdetail.scss';
+@import '../scss/components/_productdescription.scss';
+@import '../scss/components/_user.scss';
+@import '../scss/components/_additionalinfo.scss'; 
 @import 'components/_logInform.scss';
+@import '../scss/components/_product-card.scss';
+@import '../scss/components/_update-form.scss'; 

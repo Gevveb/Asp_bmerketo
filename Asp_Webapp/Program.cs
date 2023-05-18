@@ -15,8 +15,10 @@ builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configura
 
 builder.Services.AddScoped<AddressRepository>();
 builder.Services.AddScoped<UserAddressRepository>();
+builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<AuthenticationService>();
 builder.Services.AddScoped<AddressService>();
+builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<SeedService>();
 
 builder.Services.AddScoped<ShowcaseService>();

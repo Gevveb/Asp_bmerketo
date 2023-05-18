@@ -1,6 +1,21 @@
 ﻿@{
     ViewData["Title"] = User.FindFirst("DisplayName")?.Value;
 }
+@model UserModel
  <h1 class="container">
      @ViewData["Title"]
  </h1>
+
+ <div class="container">
+     @Model.Role
+ </div>
+ <div class="container">
+    @foreach (var address in Model.AddressEntities)
+    {
+        <ul>
+            <li>@address.Address.City</li>
+            <li>@address.Address.PostalCode</li>
+            <li>@address.Address.StreetName</li>
+        </ul>
+    }
+</div>

@@ -75,7 +75,22 @@ namespace Asp_Webapp.Helpers.Services
 
         public async Task<ProductEntity> GetAsync(string id)
         {
+            var categoriesEntities = new List<CategoryEntity>();
+            var productCategories = await _productCategoryRepo.GetAllAsync();
+            var categories = await _categoryRepo.GetAllAsync();
             var product = await _productRepo.GetAsync(x => x.ArticleNumber == id);
+            foreach (var _item in productCategories)
+            {
+                foreach (var category in categories)
+                {
+                    var categoryEntity = new CategoryEntity
+                    {
+                        CategoryName = category.CategoryName,
+                        Id = category.Id,
+                    };
+                    categoriesEntities.Add(categoryEntity);
+                }
+            }
             return product;
         }
     }

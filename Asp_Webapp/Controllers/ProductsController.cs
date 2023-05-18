@@ -49,8 +49,6 @@ namespace Asp_Webapp.Controllers
             return View();
         }
 
-
-        // Show one product
         [HttpGet]
         public async Task<ActionResult<ProductEntity>> ProductDetailes(string Id)
         {

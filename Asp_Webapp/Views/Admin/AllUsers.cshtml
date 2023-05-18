@@ -1,0 +1,51 @@
+﻿@model List<UserModel>
+
+<section class="user-card container">
+    <h1 class="container d-flex justify-content-center">All Users</h1>
+
+    <hr class="container mb-3 mt-3" />
+    @foreach(var user in Model)
+    {
+        <div class="user-info">
+            <h1>Name: @user.FirstName @user.LastName</h1>
+            <hr>
+            <h2>Email: @user.Email</h2>
+            <h2>Phone Number: @user.PhoneNumber</h2>
+            <h2>Role: @user.Role</h2>
+            <a asp-controller="Admin" asp-action="UpdateUser" asp-route-id="@user.Id">
+                <i class="fa-solid fa-pen"></i>
+            </a>
+        </div>
+    }
+</section>
+@*<section class="container item-listing">
+    <table class="table table-hover">
+        <thead class="table-head">
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Role</th>
+                <th>Edit user</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.FirstName @user.LastName</td>
+                    <td>@user.Email</td>
+                    <td>@user.PhoneNumber</td>
+                    <td>
+                        @user.Role
+                    </td>
+                    <td>
+                        <a asp-controller="Admin" asp-action="UpdateUser" asp-route-id="@user.Id">
+                            <i class="bi bi-pencil-square"></i> hej
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>*@

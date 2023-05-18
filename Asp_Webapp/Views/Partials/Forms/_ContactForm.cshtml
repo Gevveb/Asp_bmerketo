@@ -5,10 +5,10 @@
     <div class="container">
         <div class="title">Write something</div>
 
-        @if (@TempData["AlertMessage"] != null)
+        @if (@TempData["Message"] != null)
         {
-            <div class="alert alert-success text-center">
-                @TempData["AlertMessage"]
+            <div class="_messege-allert">
+                @TempData["Message"]
             </div>
         }
 

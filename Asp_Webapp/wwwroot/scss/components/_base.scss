@@ -10,6 +10,10 @@ html, body {
     opacity: 0.99;
     transform: translateX(-100%);
 }
+.old-price{
+    text-decoration:line-through;
+    color:red !important;
+}
 
 .invalid {
     border: 1px solid $color-theme-1 !important;

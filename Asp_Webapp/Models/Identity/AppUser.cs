@@ -12,5 +12,19 @@ namespace Asp_Webapp.Models.Identity
 
         public ICollection<UserAddressEntity> Addresses { get; set; } = new HashSet<UserAddressEntity>();
 
+        public static implicit operator UserModel(AppUser model)
+        {
+            return new UserModel
+            {
+                Id = model.Id,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Email = model.Email,
+                PhoneNumber = model.PhoneNumber,
+                ProfileImgUrl = model.ImageUrl,
+                AddressEntities = model.Addresses
+            };
+        }
+
     }
 }

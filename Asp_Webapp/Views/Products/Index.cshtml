@@ -12,6 +12,100 @@
 }
 
 <section class="container">
+    <h1 class="container d-flex justify-content-center">All Products</h1>
+
+    <hr class="container mb-3 mt-3" />
+    <div class="product-card-collection">
+        @foreach (var product in products)
+        {
+            <a asp-controller="products" asp-action="ProductDetailes" asp-route-id="@product.ArticleNumber" class="product-info">
+                <img src="@product.ImageUrl" alt="@product.Name" />
+                <h2>Name: @product.Name</h2>
+                @if (product.PriceDiscount != null!)
+                {
+                    <h2 class="old-price">Price: @product.Price</h2>
+                    <h2>Price after discount: @product.PriceDiscount</h2>
+                }
+                else
+                {
+                    <h2>Price: @product.Price</h2>
+                }
+               
+                <div>
+                    Categories:
+                    @foreach (var category in product.ProductCategories)
+                    {
+
+                        <ul>
+                            <li>@category.Category.CategoryName</li>
+                        </ul>
+
+                    }
+                </div>
+            </a>
+        }
+    </div>
+
+</section>
+
+@*<section class="grid-collection">
+    <div class="grid container">
+        @foreach (var product in products)
+        {
+            <a asp-controller="products" asp-action="ProductDetailes" asp-route-id="@product.ArticleNumber" class="collection-item">
+                <img src="@product.ImageUrl" alt="@product.Name">
+                <div class="body">
+                    <div class="title">@product.Name</div>
+                    <div class="info">
+                        <div class="price">$@product.Price</div>
+                        <i class="add-cart fa-regular fa-cart-plus"></i>
+                    </div>
+                    <div>
+                        Categories:
+                        @foreach (var category in product.ProductCategories)
+                        {
+
+                            <ul>
+                                <li>@category.Category.CategoryName</li>
+                            </ul>
+
+                        }
+                    </div>
+                </div>
+            </a>
+        }
+    </div>
+</section>*@
+
+@*<section class="product-card container">
+    <h1 class="container d-flex justify-content-center">All Users</h1>
+
+    <hr class="container mb-3 mt-3" />
+    @foreach (var product in products)
+    {
+        <a class="Product-info" asp-controller="products" asp-action="ProductDetailes" asp-route-id="@product.ArticleNumber">
+
+            <h1>Name: @product.Name</h1>
+            <hr>
+            <h2>Description: @product.Description</h2>
+            <h2>Price: @product.Price</h2>
+            <h2>Price: @product.PriceDiscount</h2>
+            <div>
+                Categories:
+                @foreach (var category in product.ProductCategories)
+                {
+
+                    <ul>
+                        <li>@category.Category.CategoryName</li>
+                    </ul>
+
+                }
+            </div>
+        </a>
+    }
+</section>*@
+
+@*<section class="container">
     <div>
         <div>
             @if (products != null)
@@ -46,4 +140,4 @@
             }
         </div>
     </div>
-</section>
+</section>*@
