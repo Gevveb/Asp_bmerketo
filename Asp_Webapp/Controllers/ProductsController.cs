@@ -62,36 +62,3 @@ namespace Asp_Webapp.Controllers
 
     }
 }
-
-
-//public class ProductsController : Controller
-//{
-//    private readonly ProductManager _productManager;
-
-//    public ProductsController(ProductManager productManager)
-//    {
-//        _productManager = productManager;
-//    }
-
-//    public async Task<IActionResult> Index()
-//    {
-//        var products = await _productManager.GetAllAsync();
-//        return View(products);
-//    }
-//    public IActionResult Add()
-//    {
-//        return View();
-//    }
-
-//    [HttpPost]
-//    public async Task<IActionResult> Add(CreateNewProductVeiwModel veiwModel)
-//    {
-//        if (ModelState.IsValid)
-//        {
-//            await _productManager.AddAsync(veiwModel.Form);
-//            return RedirectToAction("Index");
-//        }
-//        return View(veiwModel);
-//    }
-
-//}

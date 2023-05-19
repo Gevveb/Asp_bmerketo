@@ -1,43 +1,46 @@
 ﻿@model CreateNewProductVeiwModel
 
 
-<section class="create-product mt-5">
+<section class="products-form">
     <div class="container">
-        <h1 class="create-product-title">CREATE NEW PRODUCT</h1>
-
-        <form novalidate method="post" class="product-form">
+        <h1 class="title">CREATE NEW PRODUCT</h1>
+        <hr>
+        <form novalidate method="post">
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <div class="product-image">
-                <label asp-for="ImageUrl">Product image*</label>
-                <input asp-for="ImageUrl" type="text">
+            <div>
+                <label asp-for="ImageUrl"></label>
+                <input asp-for="ImageUrl" onkeyup="validate(event)" id="imageurl" type="text">
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                <div id="imageurlErrorMessage" class="errorMessage"></div>
             </div>
 
-            <div class="product-title">
+            <div>
                 <label asp-for="Name"></label>
-                <input asp-for="Name" type="text">
+                <input asp-for="Name" onkeyup="validate(event)" id="name" type="text">
                 <span asp-validation-for="Name" class="text-danger"></span>
+                <div id="nameErrorMessage" class="errorMessage"></div>
             </div>
 
-            <div class="product-description">
-                <label asp-for="Description">Product description</label>
-                <textarea asp-for="Description" type="text" class="resize"></textarea>
+            <div>
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" type="text"></textarea>
             </div>
 
-            <div class="product-price">
-                <label asp-for="Price">Price*</label>
-                <input asp-for="Price" type="text">
+            <div>
+                <label asp-for="Price"></label>
+                <input asp-for="Price" onkeyup="validate(event)" id="price" type="text">
                 <span asp-validation-for="Price" class="text-danger"></span>
+                <div id="priceErrorMessage" class="errorMessage"></div>
             </div>
 
-            <div class="product-new-price">
-                <label asp-for="PriceDiscount">Discounted Price</label>
+            <div>
+                <label asp-for="PriceDiscount"></label>
                 <input asp-for="PriceDiscount" type="text">
             </div>
 
-            <div class="product-title">
+            <div class="product-checboxes"> Select one or more categories:
                 @foreach (SelectListItem category in ViewBag.Categories)
                 {
                     <div class="mb-2">
@@ -51,13 +54,3 @@
         </form>
     </div>
 </section>
-
-
-@*                <select asp-for="Form.Category">
-                    @foreach (var category in await productCategoryManager.GetCategoriesAsync())
-                    {
-                        <option value="@category.Value">
-                            @category.Name
-                        </option>
-                    }
-                </select>*@

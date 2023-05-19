@@ -22,8 +22,5 @@ namespace Asp_Webapp.Models.Contexts
         public DbSet<ProductCategoryEntity> ProductCategories { get; set; }
         public DbSet<CategoryEntity> Categories { get; set; }
         public DbSet<ContactFormEntity> ContactForms { get; set; }
-
-        //public DbSet<ProductEntity> Products { get; set; }
-        //public DbSet<ProductCategoryEntity> ProductCategories  { get; set; }
     }
 }

@@ -22,12 +22,8 @@ namespace Asp_Webapp.Models.Identity
             var roles = await UserManager.GetRolesAsync(user);
             claimsIdentity.AddClaims(roles.Select(x => new Claim(ClaimTypes.Role, x)));
 
-            //var appUser = await _userManager.FindByIdAsync(user.Id);
-
             return claimsIdentity;
 
         }
     }
 }
-//            var roles = await UserManager.GetRolesAsync(user);
-//claimsIdentity.AddClaims(roles.Select(x => new Claim(ClaimTypes.Role, x)));

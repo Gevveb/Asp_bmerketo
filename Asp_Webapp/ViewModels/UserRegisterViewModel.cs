@@ -60,18 +60,6 @@ namespace Asp_WebApp.ViewModels
         public bool TermsAndAgreement { get; set; } = false;
 
 
-
-
-        //public static implicit operator IdentityUser(UserRegisterViewModel model)
-        //{
-        //    return new IdentityUser
-        //    {
-        //        Email = model.Email,
-        //        UserName = model.Email,
-        //        PhoneNumber = model.PhoneNumber,
-        //    };
-        //}
-
         public static implicit operator AppUser(UserRegisterViewModel viewModel)
         {
             return new AppUser

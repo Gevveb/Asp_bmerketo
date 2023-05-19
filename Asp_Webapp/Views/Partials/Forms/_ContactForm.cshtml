@@ -15,13 +15,13 @@
         <form method="post" novalidate>
             <div class="name form-group">
                 <label asp-for="Name" for="name"></label>
-                <input asp-for="Name" onchange="validate(event)" id="name" type="text" required>
+                <input asp-for="Name" onkeyup="validate(event)" id="name" type="text" required>
                 <span asp-validation-for="Name"></span>
                 <div id="nameErrorMessage" class="errorMessage"></div>
             </div>
             <div class="email form-group">
                 <label asp-for="Email" for="email"></label>
-                <input asp-for="Email" onchange="validate(event)" id="email" type="email">
+                <input asp-for="Email" onkeyup="validate(event)" id="email" type="email">
                 <span asp-validation-for="Email"></span>
                 <div id="emailErrorMessage" class="errorMessage"></div>
             </div>
@@ -35,7 +35,7 @@
             </div>
             <div class="message form-group">
                 <label asp-for="Message" for="message"></label>
-                <textarea asp-for="Message" onchange="validate(event)" type="textarea" id="comment"></textarea>
+                <textarea asp-for="Message" onkeyup="validate(event)" type="textarea" id="comment"></textarea>
                 <span asp-validation-for="Message" ></span>
                 <div id="commentErrorMessage" class="errorMessage"></div>
             </div>

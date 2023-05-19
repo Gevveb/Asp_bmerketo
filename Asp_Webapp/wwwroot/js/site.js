@@ -32,27 +32,12 @@ function toggleMenu(attribute) {
 }
 toggleMenu('[data-option="toggle"]')
 
-//function formValidation(elemenId)
-//{
-//    const element = document.getElementById(elemenId)
-//    const inputValue = element.value
-//    const error = document.getElementById("#nameErrorMessage")
-
-//    if (inputValue.length < 2)
-//    {
-//        element.classList.add('error')
-//        error.classList.add('display')
-//    }
-
-//}
-
-
 
 const checkLength = (element, minLength = 2) => {
 
     if (element.target.value.length < minLength) {
         document.getElementById(element.target.id).classList.add('redError')
-        document.getElementById(`${element.target.id}ErrorMessage`).innerHTML = `Your ${element.target.id} must contain at least ${minLength} characters`
+        document.getElementById(`${element.target.id}ErrorMessage`).innerHTML = `The ${element.target.id} must contain at least ${minLength} characters`
     } else {
         document.getElementById(element.target.id).classList.remove('redError')
         document.getElementById(`${element.target.id}ErrorMessage`).innerText = ""
