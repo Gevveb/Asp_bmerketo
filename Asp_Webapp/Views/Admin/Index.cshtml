@@ -1,10 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Backoffice";
 }
-<h1 class="container">
-    @ViewData["Title"]
-</h1>
-
-<div class="container">
-    <a asp-controller="admin" asp-action="allusers">All</a>
-</div>
+<section class="backoffice container">
+    <h1>
+        @ViewData["Title"]
+    </h1>
+    <hr>
+    <div class="button-links">
+         <a class="_button-link" asp-controller="admin" asp-action="allusers">Se all users</a>
+         <a class="_button-link" asp-controller="products" asp-action="add">Add a new Product</a>
+         <a class="_button-link" asp-controller="register" asp-action="index">Add a new user</a>
+    </div>
+</section>

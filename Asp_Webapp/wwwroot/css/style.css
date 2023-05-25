@@ -1508,3 +1508,43 @@ button:hover {
 .products-form .container form .btn-theme {
   margin-bottom: 30px;
 }
+
+.backoffice {
+  text-align: center;
+}
+.backoffice h1 {
+  margin: 30px 0;
+}
+.backoffice .button-links {
+  margin-top: 40px;
+  display: grid;
+  gap: 60px;
+  grid-template-columns: repeat(1, 1fr);
+  justify-items: center;
+}
+@media (min-width: 768px) {
+  .backoffice .button-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .backoffice .button-links {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.backoffice .button-links ._button-link {
+  width: 300px;
+  height: 300px;
+  background-color: rgba(250, 49, 80, 0.737254902);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white !important;
+  font-size: 22px;
+  border-radius: 8px;
+  box-shadow: #FAEFEF 5px 4px 8px 10px;
+}
+.backoffice .button-links ._button-link:hover {
+  background-color: #202020;
+  transition: ease-in-out 0.25s;
+}
