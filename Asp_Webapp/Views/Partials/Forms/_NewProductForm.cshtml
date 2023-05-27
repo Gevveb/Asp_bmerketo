@@ -11,9 +11,9 @@
 
             <div>
                 <label asp-for="ImageUrl"></label>
-                <input asp-for="ImageUrl" onkeyup="validate(event)" id="imageurl" type="text">
+                <input asp-for="ImageUrl" onkeyup="validate(event)" id="image" type="text">
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
-                <div id="imageurlErrorMessage" class="errorMessage"></div>
+                <div id="imageErrorMessage" class="errorMessage"></div>
             </div>
 
             <div>
@@ -30,9 +30,8 @@
 
             <div>
                 <label asp-for="Price"></label>
-                <input asp-for="Price" onkeyup="validate(event)" id="price" type="text">
+                <input asp-for="Price" id="price" type="text">
                 <span asp-validation-for="Price" class="text-danger"></span>
-                <div id="priceErrorMessage" class="errorMessage"></div>
             </div>
 
             <div>
